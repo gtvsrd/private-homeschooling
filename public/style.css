@@ -62,3 +62,77 @@ header {
     width: 100%;
     transition: width 200ms ease-in-out;
 }
+
+.card {
+    background-color: white;
+    width: 800px;
+    min-height: 400px;
+
+    margin: 45px auto;
+
+    display: grid;
+    grid-template-columns: 4fr 6fr;
+    box-shadow: 0px 2px 6px -2px rgba(0, 0, 0, 0.3);
+
+    opacity: 0;
+
+    animation-name: up;
+    animation-duration: 700ms;
+    animation-timing-function: ease-out;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes up {
+    from {
+        transform: translateX(20px);
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.details {
+    padding: 32px;
+}
+
+.details .item {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    padding: 16px 0;
+}
+
+.details .item:last-child {
+    border: none;
+}
+
+.details h3,
+.details .item div:nth-child(1) {
+    color: #777;
+    font-size: 14px;
+}
+
+.details .item div:nth-child(2) {
+    color: #555;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.details .item:last-child div:nth-child(2) {
+    padding: 8px 16px;
+    background-color: var(--secondary-color);
+    border-radius: 16px;
+    color: #CCC;
+    margin-right: 4px;
+    margin-top: 8px;
+    display: inline-block;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 18px;
+}
+
+.details h3 {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: var(--secondary-color);
+}
