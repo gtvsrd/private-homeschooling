@@ -108,8 +108,9 @@ header {
 
 .details h3,
 .details .item div:nth-child(1) {
-    color: #777;
-    font-size: 14px;
+    color: #333;
+    font-size: 16px;
+    margin-bottom: 4px;
 }
 
 .details .item div:nth-child(2) {
@@ -135,4 +136,42 @@ header {
     text-transform: uppercase;
     font-weight: bold;
     color: var(--secondary-color);
+}
+
+/*=== FORM ===*/
+
+input {
+    width: 100%;
+    outline: none;
+    color: #555;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+input[type="radio"] {
+    width: initial;
+    margin-right: 4px;
+}
+
+select {
+    width: 100%;
+    outline: none;
+    color: #555;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+input::placeholder {
+    font-size: 16px;
+    font-weight: normal;
+}
+
+button[type="submit"] {
+    padding: 8px 32px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 4px;
+    margin-top: 32px;
+    width: 100%;
+    font-size: 16px;
 }
