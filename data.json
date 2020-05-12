@@ -1,14 +1,3 @@
 {
-  "teachers": [
-    {
-      "id": 1,
-      "avatar_url": "http://youtube.com",
-      "name": "Gustavo",
-      "birth": 945820800000,
-      "grade": "Ensino Médio Completo",
-      "type": "Presencial",
-      "services": "Literatura",
-      "created_at": 1587312383690
-    }
-  ]
+  "teachers": []
 }
