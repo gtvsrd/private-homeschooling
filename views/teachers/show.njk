@@ -36,7 +36,7 @@
         <div class="item">
             <div>Acompanhamento</div>
             {% for service in teacher.services %}
-                <div>{{service}}</div>
+                <span>{{service}}</span>
             {% endfor %}
         </div>
 
@@ -44,7 +44,13 @@
             <div>Desde</div>
             <div>{{teacher.created_at}}</div>
         </div>
-        <a href="/teachers/{{teacher.id}}/edit" class="button">Editar</a>
+        
+        <form id="form-delete" method="POST" action="/teachers?_method=DELETE">
+            <input type="hidden" name="id" value="{{teacher.id}}">
+            <a href="/teachers/{{teacher.id}}/edit" class="button">Editar</a>
+            <button type="submit">Deletar</button>
+
+        </form>
     </section>
 </div>
 

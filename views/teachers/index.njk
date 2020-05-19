@@ -2,22 +2,33 @@
 
 {% block content %}
 
-{% for teacher in teachers %}
-
-<div class="card">
-    <section 
-        class="avatar"
-        style="background: url({{teacher.avatar_url}}) no-repeat center center / cover">
-
-    </section>
-    
-    <section class="details">
-
-        <h3>Detalhes</h3>
-
-    </section>
+<div class="card table-container">
+    <table width="100%">
+        <thead>
+            <tr>
+                <th>Professor</th>
+                <th>Acompanhamento</th>
+                <th>Ação</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for teacher in teachers %}
+            
+            <tr>
+                <td>
+                    <span style="background-image: url({{teacher.avatar_url}})"></span>
+                    {{teacher.name}}
+                </td>
+                <td>
+                    {% for service in teacher.services %}
+                    <span>{{service}}</span>
+                    {% endfor %}
+                </td>
+                <td><a href="/teachers/{{teacher.id}}">ver</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 </div>
-
-{% endfor %}
 
 {% endblock content %}

@@ -1,3 +1,24 @@
 {
-  "teachers": []
+  "teachers": [
+    {
+      "id": 1,
+      "avatar_url": "https://source.unsplash.com/random",
+      "name": "Fabrício Oliveira",
+      "birth": 324432000000,
+      "grade": "Doutorado",
+      "type": "À distância",
+      "services": "Tecnologia, Teologia",
+      "created_at": 1589915883475
+    },
+    {
+      "id": 2,
+      "avatar_url": "https://source.unsplash.com/random",
+      "name": "Gustavo Rodrigues",
+      "birth": 945820800000,
+      "grade": "Ensino Médio Completo",
+      "type": "Presencial",
+      "services": "Literatura, Língua inglesa",
+      "created_at": 1589918087241
+    }
+  ]
 }

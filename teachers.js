@@ -93,6 +93,7 @@ exports.put = (req, res) => {
         ...foundTeacher,
         ...req.body,
         birth: Date.parse(req.body.birth),
+        id: Number(req.body.id)
     }
 
     data.teachers[index] = teacher;
@@ -118,4 +119,22 @@ exports.delete = (req, res) => {
     
         return res.redirect("/teachers");
     });
+}
+
+exports.index = (req, res) => {
+    const teachers = data.teachers;
+    let fixedTeachers = [];
+
+    for(let i = 0; i < teachers.length; i++) {
+        const fixedServices = teachers[i].services.split(",");
+        
+        const fixedTeacher = {
+            ...teachers[i],
+            services: fixedServices,
+        };
+
+        fixedTeachers.push(fixedTeacher);
+    }
+
+    return res.render("teachers/index", { teachers: fixedTeachers });
 }
