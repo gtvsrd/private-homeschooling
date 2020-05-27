@@ -1,7 +1,7 @@
 //create
 const fs = require('fs');
-const data = require('./data.json');
-const { age, date, graduation } = require('./utils');
+const data = require('../data.json');
+const { age, date, graduation } = require('../utils');
 
 exports.post = (req, res) => {
     const keys = Object.keys(req.body);
@@ -36,6 +36,10 @@ exports.post = (req, res) => {
     });
 
     //return res.send(req.body);
+}
+
+exports.create = (req, res) => {
+    return res.render("teachers/create");
 }
 
 exports.show = (req, res) => {

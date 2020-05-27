@@ -1,4 +1,15 @@
 {
+  "students": [
+    {
+      "avatar_url": "https://source.unsplash.com/random",
+      "name": "Gustavo Rodrigues",
+      "email": "gustavorodrigues.pr@outlook.com",
+      "birth": 945820800000,
+      "schoolYear": "5º Ano do Ensino Fundamental",
+      "workload": "3",
+      "id": 1
+    }
+  ],
   "teachers": [
     {
       "id": 1,

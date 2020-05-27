@@ -1,0 +1,60 @@
+<div class="item">
+    <div>Avatar URL:</div>
+    <div>
+        <input type="url" name="avatar_url" placeholder="http://" value="{{ student.avatar_url }}">
+    </div>
+</div>
+
+<div class="item">
+    <div>Nome:</div>
+    <div>
+        <input type="text" name="name" value="{{ student.name }}">
+    </div>
+</div>
+
+<div class="item">
+    <div>Email:</div>
+    <div>
+        <input type="email" name="email" value="{{ student.email }}">
+    </div>
+</div>
+
+<div class="item">
+    <div>Data de nascimento:</div>
+    <div>
+        <input type="date" name="birth" value="{{ student.birth }}">
+    </div>
+</div>
+
+<div class="item select">
+    <div>Ano escolar:</div>
+    <div>
+        <span>
+        <select name="schoolYear">
+            <option value="5" {% if student.schoolYear == "5"%} selected {% endif %}>
+                5º Ano do Ensino Fundamental</option>
+            <option value="6" {% if student.schoolYear == "6"%} selected {% endif %}>
+                6º Ano do Ensino Fundamental</option>
+            <option value="7" {% if student.schoolYear == "7"%} selected {% endif %}>
+                7º Ano do Ensino Fundamental</option>
+            <option value="8" {% if student.schoolYear == "8"%} selected {% endif %}>
+                8º Ano do Ensino Fundamental</option>
+            <option value="9" {% if student.schoolYear == "9"%} selected {% endif %}>
+                9º Ano do Ensino Fundamental</option>
+            <option value="1" {% if student.schoolYear == "1"%} selected {% endif %}>
+                1º Ano do Ensino Médio</option>
+            <option value="2" {% if student.schoolYear == "2"%} selected {% endif %}>
+                2º Ano do Ensino Médio</option>
+            <option value="3" {% if student.schoolYear == "3"%} selected {% endif %}>
+                3º Ano do Ensino Médio</option>
+        </select>
+        </span>
+    </div>
+</div>
+
+<div class="item">
+    <div>Carga horária semanal:</div>
+    <input type="number" name="workload" value="{{ student.workload }}"> 
+</div>
+
+<button type="submit">Salvar</button>
