@@ -22,7 +22,16 @@
                     {{student.name}}
                 </td>
                 <td>{{student.email}}</td>
-                <td>{{student.schoolYear}}</td>
+                <td>
+                    {% if student.school_year == "5"%} 5 º Ano do Ensino Fundamental {% endif %}
+                    {% if student.school_year == "6"%} 6 º Ano do Ensino Fundamental {% endif %}
+                    {% if student.school_year == "7"%} 7 º Ano do Ensino Fundamental {% endif %}
+                    {% if student.school_year == "8"%} 8 º Ano do Ensino Fundamental {% endif %}
+                    {% if student.school_year == "9"%} 9 º Ano do Ensino Fundamental {% endif %}
+                    {% if student.school_year == "1"%} 1 º Ano do Ensino Médio {% endif %}
+                    {% if student.school_year == "2"%} 2 º Ano do Ensino Médio {% endif %}
+                    {% if student.school_year == "3"%} 3 º Ano do Ensino Médio {% endif %}
+                </td>
                 <td><a href="/students/{{student.id}}">ver</a></td>
             </tr>
             {% endfor %}

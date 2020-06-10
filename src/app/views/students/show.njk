@@ -20,7 +20,7 @@
 
         <div class="item">
             <div>Idade</div>
-            <div>{{student.birth}}</div>
+            <div>{{student.age}}</div>
         </div>
 
         <div class="item">
@@ -30,7 +30,18 @@
 
         <div class="item">
             <div>Ano Escolar</div>
-            <div>{{student.schoolYear}}</div>
+            <div>
+                
+                {% if student.school_year == "5"%} 5 º Ano do Ensino Fundamental {% endif %}
+                {% if student.school_year == "6"%} 6 º Ano do Ensino Fundamental {% endif %}
+                {% if student.school_year == "7"%} 7 º Ano do Ensino Fundamental {% endif %}
+                {% if student.school_year == "8"%} 8 º Ano do Ensino Fundamental {% endif %}
+                {% if student.school_year == "9"%} 9 º Ano do Ensino Fundamental {% endif %}
+                {% if student.school_year == "1"%} 1 º Ano do Ensino Médio {% endif %}
+                {% if student.school_year == "2"%} 2 º Ano do Ensino Médio {% endif %}
+                {% if student.school_year == "3"%} 3 º Ano do Ensino Médio {% endif %}
+            
+            </div>
         </div>
 
         <div class="item">

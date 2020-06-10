@@ -28,8 +28,8 @@
             <div>
                 <input 
                     type="date" 
-                    name="birth"
-                    value="{{ teacher.birth }}"
+                    name="birth_date"
+                    value="{{ teacher.birth_date }}"
                 >
             </div>
         </div>
@@ -38,17 +38,17 @@
             <div>Grau de Escolaridade:</div>
             <div>
                 <span>
-                    <select name="grade" id="">
-                        <option value="Ensino Médio Completo" {% if teacher.grade == 'Ensino Medio Completo' %}
+                    <select name="education_level" id="">
+                        <option value="Ensino Médio Completo" {% if teacher.education_level == 'Ensino Medio Completo' %}
                         selected
                         {% endif %}>Ensino Médio Completo</option>
-                        <option value="Ensino Superior Completo"{% if teacher.grade == 'Ensino Superior Completo' %}
+                        <option value="Ensino Superior Completo"{% if teacher.education_level == 'Ensino Superior Completo' %}
                         selected
                         {% endif %}>Ensino Superior Completo</option>
-                        <option value="Mestrado" {% if teacher.grade == 'Mestrado' %}
+                        <option value="Mestrado" {% if teacher.education_level == 'Mestrado' %}
                         selected
                         {% endif %}>Mestrado</option>
-                        <option value="Doutorado"{% if teacher.grade == 'Doutorado' %}
+                        <option value="Doutorado"{% if teacher.education_level == 'Doutorado' %}
                         selected
                         {% endif %}>Doutorado</option>
                     </select>
@@ -59,10 +59,10 @@
         <div class="item check">
             <div>Tipo de aula:</div>
             <div>
-                <span><input type="radio" name="type" value="Presencial" {% if teacher.type == 'Presencial' %}
+                <span><input type="radio" name="class_type" value="Presencial" {% if teacher.class_type == 'Presencial' %}
                         checked
                         {% endif %}> Presencial </span>
-                <span><input type="radio" name="type" value="À distância" {% if teacher.type == 'À distância' %}
+                <span><input type="radio" name="class_type" value="À distância" {% if teacher.class_type == 'À distância' %}
                         checked
                         {% endif %}> À distância </span>
             </div>
@@ -73,9 +73,9 @@
             <div>
                 <input 
                     type="text"
-                    name="services"
+                    name="subjects_taught"
                     placeholder="Separe os serviços prestados por vírgula"
-                    value="{{teacher.services}}"
+                    value="{{teacher.subjects_taught}}"
                 >
             </div>
         </div>
