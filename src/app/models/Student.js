@@ -39,7 +39,13 @@ module.exports = {
     },
 
     find(id, callback) {
-        db.query(`SELECT * FROM students WHERE id = $1`, [id], function(err, results) {
+        db.query(`
+        SELECT students.*, teachers.name AS teacher_name 
+        FROM students
+        LEFT JOIN teachers ON (students.teacher_id = teachers.id) 
+        WHERE students.id = $1`, 
+        
+        [id], function(err, results) {
             if(err) throw `Database Error! ${err}`;
 
             callback(results.rows[0]);
@@ -50,13 +56,14 @@ module.exports = {
     update(data, callback) {
         const query = `
             UPDATE students SET
-                avatar_url=$1,
-                name=$2,
-                email=$3,
-                birth=$4,
-                school_year=$5,
-                workload=$6
-            WHERE id = $7`;
+                avatar_url=($1),
+                name=($2),
+                email=($3),
+                birth=($4),
+                school_year=($5),
+                workload=($6),
+                teacher_id=($7)
+            WHERE id = ($8)`;
 
         const values = [
             data.avatar_url,
@@ -65,6 +72,7 @@ module.exports = {
             date(data.birth).iso,
             data.school_year,
             data.workload,
+            data.teacher,
             data.id
         ];
 
@@ -81,5 +89,13 @@ module.exports = {
 
             callback();
         })
-    }
+    },
+
+    teacherSelectOptions(callback) {
+        db.query(`SELECT name, id FROM teachers`, function(err, results) {
+            if(err) throw `Database Error!`;
+
+            callback(results.rows);
+        });
+    },
 }

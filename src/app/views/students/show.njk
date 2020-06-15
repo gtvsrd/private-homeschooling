@@ -49,7 +49,10 @@
             <div>{{student.workload}} horas</div>
         </div>
 
-        
+        <div class="item">
+            <div>Professor</div>
+            <div>{{student.teacher_name}}</div>
+        </div>
         
         <form id="form-delete" method="POST" action="/students?_method=DELETE">
             <input type="hidden" name="id" value="{{student.id}}">
